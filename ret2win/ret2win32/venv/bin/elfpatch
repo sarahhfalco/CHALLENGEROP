@@ -1,0 +1,9 @@
+#!/bin/sh
+'''exec' "/home/sarahfalco/Scrivania/Challenge ROP risolte/ret2win/ret2win32/venv/bin/python3" "$0" "$@"
+' '''
+import sys
+from pwnlib.commandline.common import deprecated_main
+if __name__ == '__main__':
+    if sys.argv[0].endswith('.exe'):
+        sys.argv[0] = sys.argv[0][:-4]
+    sys.exit(deprecated_main())
